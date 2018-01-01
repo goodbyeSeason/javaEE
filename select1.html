@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Ticket Booking</title>
+	<!-- ICONS -->
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/ticket.png">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/text.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/grid.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/layout.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/nav.css" media="screen" />
+    <link rel="stylesheet" href="css/jq-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+    <!-- BEGIN: load jquery -->
+    <script src="assets/js/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery-ui/jquery.ui.sortable.min.js" type="text/javascript"></script>
+    <script src="assets/js/table/jquery.dataTables.min.js" type="text/javascript"></script>
+    <!-- END: load jquery -->
+    <script src="assets/js/setup.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#example').dataTable({
+				"paging":true,
+				"aoColumnDefs": [{ "bSortable": false, "aTargets": [0,1,4,5,6,7,8,9,10,11,12,13,14,15],}],
+				"aaSorting": [[2, "asc"]]
+			});
+
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container_12">
+        <div class="grid_12 header-repeat">
+            <div id="branding">
+				<div class="floatleft" style="font-size:30px;color:#A1EAFF">火车订票系统</div>
+                <div class="floatright">
+                    <div class="floatleft" style="margin-top:20px">
+                        <img src="assets/img/img-profile.jpg" alt="Profile Pic" /></div>
+                    <div class="floatleft marginleft10">
+                        <ul class="inline-ul floatleft" style="margin-top:20px">
+                            <li>Hello Admin</li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+		<div class="grid_12">
+		        <div class="message">
+			<form>
+			<div class=" search_message m1 ">
+			<input type="radio" name="" value="">单程<br>	
+			<input type="radio" name="" value="">往返
+		</div>
+		<div class="search_message" > 
+			出发地: <input type="text" name="">
+			目的地: <input type="text" name="">
+			<label for="from">出发日</label>	
+			<input type="text" id="from" name="from">
+			<label for="to">返程日</label>
+			<input type="text" id="to" name="to">
+		</div>
+		<div class=search_message >
+			<input type="radio" name="" value="">普通	<br>	
+			<input type="radio" name="" value="">学生
+		<div class=search_message >
+			<button class="btn btn1">查询</button>
+		</div>
+			
+			</form>
+			<form>
+					
+					</form>
+        </div>
+		</div>
+		</div>
+        <div class="grid_12">
+            <div class="box round first grid">
+                <h2>车次列表</h2>
+                <div class="block">                
+                    <table class="display" id="example">
+					<thead>
+						<tr>
+							<th>车次</th>
+							<th>出发站
+								<br>到达站</th>
+							<th>出发时间
+								<br>到达时间</th>
+							<th>历时</th>
+							<th>商务座
+								<br>特等座</th>
+							<th>一等座</th>
+							<th>二等座</th>
+							<th>高级软卧</th>
+							<th>软卧</th>
+							<th>动卧</th>
+							<th>硬卧</th>
+							<th>软座</th>
+							<th>硬座</th>
+							<th>无座</th>
+							<th>其他</th>
+							<th>备注</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>D905</td>
+							<td>上海<br>杭州东</td>
+							<td>19:35<br>21:08</td>
+							<td>01:33<br>当日到达</td>
+							<td>-</td>
+							<td>-</td>
+							<td>1</td>
+							<td>-</td>
+							<td>-</td>
+							<td>有</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>D941</td>
+							<td>上海虹桥
+								<br>杭州东</td>
+							<td>19:55
+								<br>20:53</td>
+							<td>00:58
+								<br>当日到达</td>
+							<td>-</td>
+							<td>-</td>
+							<td>无</td>
+							<td>无</td>
+							<td>-</td>
+							<td>无</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>D931</td>
+							<td>上海虹桥
+								<br>杭州东</td>
+							<td>20:00
+								<br>20:58</td>
+							<td>00:58
+								<br>当日到达</td>
+							<td>-</td>
+							<td>-</td>
+							<td>无</td>
+							<td>2</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+						</tr>
+					</tbody>
+				</table>                  
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+	<div id="site_info">
+		<p style="text-align:center">
+			关于我们|网站的声明
+		</p>
+		<p style="text-align:center">
+			版权所有@2017javaee小组
+		</p>
+	</div>
+</body>
+</html>

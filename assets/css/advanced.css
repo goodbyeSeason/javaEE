@@ -1,0 +1,46 @@
+div{display: block}
+
+.lisBox{position:relative;}}
+.List-Box{border:1px solid #E0E0E0;margin-top:15px;}
+.List-Wrap{border-left:11px solid #F0F0F0;padding:0 7px;}
+.List-Wrap .railway_list{padding:8px 0 8px 10px;border-bottom:1px dashed #E8E8E8;margin-right:13%;position:relative;}
+.List-Wrap .railway_list .Transfer{font-size:12px;color:#1D74E6;height:22px;line-height:22px;border:1px solid #E8E8E8;-moz-border-radius:50px;-webkit-border-radius:50px;border-radius:50px;position: absolute;left:42%;bottom:-10%;background:#fff;padding:0 10px;}
+
+.w1,.w2,.w3,.w4,.w5{float:left;padding-top:5px;}
+.w6{float:right;}
+.w1{width:12%;}
+.w2{width:14%;}
+.w3{width:12%;}
+.w4{width:15%;}
+.w5{width:40%;}
+
+.railway_list:after{clear:both;content:".";display:block;height:0;visibility:hidden;}
+.railway_list .w1 div,
+.railway_list .w2 div,
+.railway_list .w3 div{height:27px;line-height:27px;}
+.railway_list .w3 div i{margin-top:5px;}
+.railway_list .w1 div label{ position:relative; cursor:pointer;}
+.railway_list .w2 div{color:#333;}
+.railway_list .w2 div strong{font-size:14px;}
+.railway_list .w3 div span{padding-left:5px;}
+.railway_list .w4 div{padding-top:5px;font-size:12px;}
+.railway_list .w5 div{height:27px;line-height:27px;}
+.railway_list .w5 div span{color:#333;display:inline-block;width:27%;}
+.railway_list .w5 div span label{vertical-align:middle;}
+.railway_list .w5 div small{padding-left:10px;color:#FA6700;}
+.railway_list .w5 div b{color:#FA6700;font-size:14px;display:inline-block;*zoom:1;*display:inline;width:23%;}
+.railway_list .w5 div b a{color:#FA6700;border-bottom:1px dashed #FA6700;float:left;margin-bottom:-3px;}
+.railway_list .cord div b a{color:#999;border-bottom:1px dashed #FA6700;float:left;margin-bottom:-3px;}
+.railway_list .w5 div strong{color:#333;width:30%;display:inline-block;*zoom:1;*display:inline; font-weight:normal; text-align:left;line-height:24px;}
+.railway_list .w5 div strong em{color:#ff9913;}
+.railway_list .w6 div{padding-top:4.8px;height:24px;}
+.railway_list .w5 div i{cursor:pointer;padding-left:3px\9;}
+.railway_list .w2 div i{ border-bottom:1px dashed #3480e2;color:#3480e2;cursor:pointer;font-size:14px;}
+.railway_list .w2 div label{font-size:12px;}
+.railway_list .w5 div i b{line-height:16px;}
+.BookButton{background:#FF9A00;right:-13%;top:16%;}
+.BanButton{background:#277AE7;right:-13%;top:23%;}
+.BanButton:hover{background:#004FB3;color:#fff;}
+.MergeButton,.BookButton,.BanButton{width:70px;height:30px;line-height:30px;color:#fff;position: absolute;text-align: center;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+.MergeButton{background:#FF9A00;right:-13%;bottom:-13%;cursor: pointer;}
+.MergeButton:hover,.BookButton:hover{background:#FF8400;color:#fff;}

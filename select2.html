@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Ticket Booking</title>
+    <!-- ICONS -->
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/ticket.png">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/text.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/grid.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/layout.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/nav.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/advanced.css" mdedia="screen">
+
+    <!-- BEGIN: load jquery -->
+    <script src="assets/js/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <!-- END: load jquery -->
+    <script src="assets/js/setup.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setupLeftMenu();
+
+            $('.datatable').dataTable();
+            setSidebarHeight();
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container_12">
+        <div class="grid_12 header-repeat">
+            <div id="branding">
+                <div class="floatleft" style="font-size: 30px;color:#A1EAFF">
+                    火车订票系统</div>
+                <div class="floatright" style="margin-top:20px">
+                    <div class="floatleft">
+                        <img src="assets/img/img-profile.jpg" alt="Profile Pic" />
+                    </div>
+                    <div class="floatleft marginleft10">
+                        <ul class="inline-ul floatleft">
+                            <li>Hello Admin</li>
+                            <li>
+                                <a href="#">Logout</a>
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+        <div class="grid_12">
+            <div class="message">
+                <form>
+                    <div class=" search_message m1 ">
+                        <input type="radio" name="" value="">单程
+                        <br>
+                        <input type="radio" name="" value="">往返
+                    </div>
+                    <div class="search_message">
+                        出发地:
+                        <input type="text" name=""> 目的地:
+                        <input type="text" name="">
+                        <label for="from">出发日</label>
+                        <input type="text" id="from" name="from">
+                        <label for="to">返程日</label>
+                        <input type="text" id="to" name="to">
+                    </div>
+                    <div class=search_message>
+                        <input type="radio" name="" value="">普通
+                        <br>
+                        <input type="radio" name="" value="">学生
+                        <div class=search_message>
+                            <button class="btn btn1">查询</button>
+                        </div>
+
+                </form>
+                <form>
+
+                </form>
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+
+        <div class="grid_12">
+            <div class="box round first grid">
+                <h2>
+                   车次列表</h2>
+                <div class="block">
+                    <table class="data display datatable" id="example">
+                        <thead>
+                            <tr>
+                                <th>车次信息</th>
+                                <th>发/到时间</th>
+                                <th>发/到站</th>
+                                <th>运行时长</th>
+                                <th>参考价格</th>
+                                <th>----------</th>
+                                <th>----------</th>
+                                <th>----------</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="lisBox" id="listTrain">
+
+
+                        <div class="List-Box" btn="1">
+                            <div class="List-Wrap">
+
+
+                                <div class="railway_list" style="padding-bottom: 25px;" btn="1">
+                                    <div class="Transfer">南京南换乘 停留26分钟 全程5小时52分钟</div>
+
+                                    <a class="MergeButton" target="_blank" info="2017-12-30|G7610|宁波|ningbo|南京南|nanjingnan|17:25" onclick="return hubTrainList.btnBookingCheck(event);"
+                                        btn="1-1-G7610">合并预订</a>
+
+                                    <div class="w1">
+                                        <div>
+                                            <strong>G7610</strong>
+                                        </div>
+                                    </div>
+                                    <div class="w2">
+                                        <div>
+                                            <strong>17:25</strong>
+                                        </div>
+                                        <div>
+                                            <label>20:02
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="w3">
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+                                            <span>宁波</span>
+                                        </div>
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+
+                                            <span>南京南</span>
+                                        </div>
+                                    </div>
+                                    <div class="w4">
+                                        <div>2小时37分钟</div>
+                                    </div>
+                                    <div class="w5 ">
+
+                                        <div seat="1-G7610-209">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="209" inventory="99" name="1-G7610" checked="" onclick="hubTrainList.getBookingCheck('2017-12-30','G7610','宁波','南京南','209','1-1-G7610')">
+
+                                                </label>
+                                                二等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 188.5</b>
+                                            <strong class="">
+
+                                                余99张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="1-G7610-207">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="207" inventory="99" name="1-G7610" onclick="hubTrainList.getBookingCheck('2017-12-30','G7610','宁波','南京南','207','1-1-G7610')">
+
+                                                </label>
+                                                一等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 318</b>
+                                            <strong class="">
+
+                                                余99张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="1-G7610-221">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="221" inventory="20" name="1-G7610" onclick="hubTrainList.getBookingCheck('2017-12-30','G7610','宁波','南京南','221','1-1-G7610')">
+
+                                                </label>
+                                                商务座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 596</b>
+                                            <strong class="">
+
+                                                余20张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="1-G7610-227">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="227" inventory="0" name="1-G7610" onclick="hubTrainList.getBookingCheck('2017-12-30','G7610','宁波','南京南','227','1-1-G7610')">
+
+                                                </label>
+                                                无座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 188.5</b>
+                                            <strong class="">
+
+                                                余0张
+
+                                            </strong>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="railway_list" style="border: 0; padding-top: 20px; padding-bottom: 20px;" btn="2">
+
+                                    <a class="BookButton" target="_blank" style="display: none" info="2017-12-30|G368|南京南|nanjingnan|郑州东|zhengzhoudong|20:28"
+                                        href="###" onclick="return hubTrainList.btnBookingCheck(event);" btn="1-2-G368">预定</a>
+
+                                    <div class="w1">
+                                        <div>
+                                            <strong>G368</strong>
+                                        </div>
+                                    </div>
+                                    <div class="w2">
+                                        <div>
+                                            <strong>20:28</strong>
+                                        </div>
+                                        <div>
+                                            <label>23:17
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="w3">
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+                                            <span>南京南</span>
+                                        </div>
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+                                            <span>郑州东</span>
+                                        </div>
+                                    </div>
+                                    <div class="w4">
+                                        <div>2小时49分钟</div>
+                                    </div>
+                                    <div class="w5 ">
+
+                                        <div seat="1-G368-209">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" checked="" seatid="209" inventory="99" name="1-G368" onclick="hubTrainList.getBookingCheck('2017-12-30','G368','南京南','郑州东','209','1-2-G368')">
+
+                                                </label>
+                                                二等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 317.5</b>
+                                            <strong class="">
+
+                                                余99张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="1-G368-207">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="207" inventory="99" name="1-G368" onclick="hubTrainList.getBookingCheck('2017-12-30','G368','南京南','郑州东','207','1-2-G368')">
+
+                                                </label>
+                                                一等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 520.5</b>
+                                            <strong class="">
+
+                                                余99张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="1-G368-221">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="221" inventory="19" name="1-G368" onclick="hubTrainList.getBookingCheck('2017-12-30','G368','南京南','郑州东','221','1-2-G368')">
+
+                                                </label>
+                                                商务座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 1002</b>
+                                            <strong class="">
+
+                                                余19张
+
+                                            </strong>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="List-Box" btn="2">
+                            <div class="List-Wrap">
+
+
+                                <div class="railway_list" style="padding-bottom: 25px;" btn="1">
+                                    <div class="Transfer">南京南换乘 停留46分钟 全程5小时57分钟</div>
+
+                                    <a class="MergeButton" target="_blank" info="2017-12-30|G7682|宁波|ningbo|南京南|nanjingnan|17:20" onclick="return hubTrainList.btnBookingCheck(event);"
+                                        btn="2-1-G7682">合并预订</a>
+
+                                    <div class="w1">
+                                        <div>
+                                            <strong>G7682</strong>
+                                        </div>
+                                    </div>
+                                    <div class="w2">
+                                        <div>
+                                            <strong>17:20</strong>
+                                        </div>
+                                        <div>
+                                            <label>19:42
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="w3">
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+                                            <span>宁波</span>
+                                        </div>
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+
+                                            <span>南京南</span>
+                                        </div>
+                                    </div>
+                                    <div class="w4">
+                                        <div>2小时22分钟</div>
+                                    </div>
+                                    <div class="w5 ">
+
+                                        <div seat="2-G7682-209">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="209" inventory="0" name="2-G7682" onclick="hubTrainList.getBookingCheck('2017-12-30','G7682','宁波','南京南','209','2-1-G7682')">
+
+                                                </label>
+                                                二等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 188.5</b>
+                                            <strong class="">
+
+                                                余0张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="2-G7682-207">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="207" inventory="8" name="2-G7682" checked="" onclick="hubTrainList.getBookingCheck('2017-12-30','G7682','宁波','南京南','207','2-1-G7682')">
+
+                                                </label>
+                                                一等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 318</b>
+                                            <strong class="">
+
+                                                余8张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="2-G7682-227">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="227" inventory="0" name="2-G7682" onclick="hubTrainList.getBookingCheck('2017-12-30','G7682','宁波','南京南','227','2-1-G7682')">
+
+                                                </label>
+                                                无座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 188.5</b>
+                                            <strong class="">
+
+                                                余0张
+
+                                            </strong>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="railway_list" style="border: 0; padding-top: 20px; padding-bottom: 20px;" btn="2">
+
+                                    <a class="BookButton" target="_blank" style="display: none" info="2017-12-30|G368|南京南|nanjingnan|郑州东|zhengzhoudong|20:28"
+                                        href="###" onclick="return hubTrainList.btnBookingCheck(event);" btn="2-2-G368">预定</a>
+
+                                    <div class="w1">
+                                        <div>
+                                            <strong>G368</strong>
+                                        </div>
+                                    </div>
+                                    <div class="w2">
+                                        <div>
+                                            <strong>20:28</strong>
+                                        </div>
+                                        <div>
+                                            <label>23:17
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="w3">
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+                                            <span>南京南</span>
+                                        </div>
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+                                            <span>郑州东</span>
+                                        </div>
+                                    </div>
+                                    <div class="w4">
+                                        <div>2小时49分钟</div>
+                                    </div>
+                                    <div class="w5 ">
+
+                                        <div seat="2-G368-209">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" checked="" seatid="209" inventory="99" name="2-G368" onclick="hubTrainList.getBookingCheck('2017-12-30','G368','南京南','郑州东','209','2-2-G368')">
+
+                                                </label>
+                                                二等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 317.5</b>
+                                            <strong class="">
+
+                                                余99张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="2-G368-207">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="207" inventory="99" name="2-G368" onclick="hubTrainList.getBookingCheck('2017-12-30','G368','南京南','郑州东','207','2-2-G368')">
+
+                                                </label>
+                                                一等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 520.5</b>
+                                            <strong class="">
+
+                                                余99张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="2-G368-221">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="221" inventory="19" name="2-G368" onclick="hubTrainList.getBookingCheck('2017-12-30','G368','南京南','郑州东','221','2-2-G368')">
+
+                                                </label>
+                                                商务座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 1002</b>
+                                            <strong class="">
+
+                                                余19张
+
+                                            </strong>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="List-Box" btn="3">
+                            <div class="List-Wrap">
+
+
+                                <div class="railway_list" style="padding-bottom: 25px;" btn="1">
+                                    <div class="Transfer">南京南换乘 停留57分钟 全程6小时13分钟</div>
+
+                                    <a class="MergeButton" target="_blank" info="2017-12-30|G64|宁波|ningbo|南京南|nanjingnan|17:04" onclick="return hubTrainList.btnBookingCheck(event);"
+                                        btn="3-1-G64">合并预订</a>
+
+                                    <div class="w1">
+                                        <div>
+                                            <strong>G64</strong>
+                                        </div>
+                                    </div>
+                                    <div class="w2">
+                                        <div>
+                                            <strong>17:04</strong>
+                                        </div>
+                                        <div>
+                                            <label>19:31
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="w3">
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+                                            <span>宁波</span>
+                                        </div>
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+
+                                            <span>南京南</span>
+                                        </div>
+                                    </div>
+                                    <div class="w4">
+                                        <div>2小时27分钟</div>
+                                    </div>
+                                    <div class="w5 ">
+
+                                        <div seat="3-G64-209">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="209" inventory="99" name="3-G64" checked="" onclick="hubTrainList.getBookingCheck('2017-12-30','G64','宁波','南京南','209','3-1-G64')">
+
+                                                </label>
+                                                二等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 188.5</b>
+                                            <strong class="">
+
+                                                余99张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="3-G64-207">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="207" inventory="99" name="3-G64" onclick="hubTrainList.getBookingCheck('2017-12-30','G64','宁波','南京南','207','3-1-G64')">
+
+                                                </label>
+                                                一等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 318</b>
+                                            <strong class="">
+
+                                                余99张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="3-G64-221">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="221" inventory="99" name="3-G64" onclick="hubTrainList.getBookingCheck('2017-12-30','G64','宁波','南京南','221','3-1-G64')">
+
+                                                </label>
+                                                商务座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 596</b>
+                                            <strong class="">
+
+                                                余99张
+
+                                            </strong>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="railway_list" style="border: 0; padding-top: 20px; padding-bottom: 20px;" btn="2">
+
+                                    <a class="BookButton" target="_blank" style="display: none" info="2017-12-30|G368|南京南|nanjingnan|郑州东|zhengzhoudong|20:28"
+                                        href="###" onclick="return hubTrainList.btnBookingCheck(event);" btn="3-2-G368">预定</a>
+
+                                    <div class="w1">
+                                        <div>
+                                            <strong>G368</strong>
+                                        </div>
+                                    </div>
+                                    <div class="w2">
+                                        <div>
+                                            <strong>20:28</strong>
+                                        </div>
+                                        <div>
+                                            <label>23:17
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="w3">
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+                                            <span>南京南</span>
+                                        </div>
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+                                            <span>郑州东</span>
+                                        </div>
+                                    </div>
+                                    <div class="w4">
+                                        <div>2小时49分钟</div>
+                                    </div>
+                                    <div class="w5 ">
+
+                                        <div seat="3-G368-209">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" checked="" seatid="209" inventory="99" name="3-G368" onclick="hubTrainList.getBookingCheck('2017-12-30','G368','南京南','郑州东','209','3-2-G368')">
+
+                                                </label>
+                                                二等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 317.5</b>
+                                            <strong class="">
+
+                                                余99张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="3-G368-207">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="207" inventory="99" name="3-G368" onclick="hubTrainList.getBookingCheck('2017-12-30','G368','南京南','郑州东','207','3-2-G368')">
+
+                                                </label>
+                                                一等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 520.5</b>
+                                            <strong class="">
+
+                                                余99张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="3-G368-221">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="221" inventory="19" name="3-G368" onclick="hubTrainList.getBookingCheck('2017-12-30','G368','南京南','郑州东','221','3-2-G368')">
+
+                                                </label>
+                                                商务座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 1002</b>
+                                            <strong class="">
+
+                                                余19张
+
+                                            </strong>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="List-Box" btn="4">
+                            <div class="List-Wrap">
+
+
+                                <div class="railway_list" style="padding-bottom: 25px;" btn="1">
+                                    <div class="Transfer">杭州东换乘 停留50分钟 全程6小时20分钟</div>
+
+                                    <a class="MergeButton" target="_blank" info="2017-12-30|G2356|宁波|ningbo|杭州东|hangzhoudong|14:43" onclick="return hubTrainList.btnBookingCheck(event);"
+                                        btn="4-1-G2356">合并预订</a>
+
+                                    <div class="w1">
+                                        <div>
+                                            <strong>G2356</strong>
+                                        </div>
+                                    </div>
+                                    <div class="w2">
+                                        <div>
+                                            <strong>14:43</strong>
+                                        </div>
+                                        <div>
+                                            <label>15:49
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="w3">
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+                                            <span>宁波</span>
+                                        </div>
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+
+                                            <span>杭州东</span>
+                                        </div>
+                                    </div>
+                                    <div class="w4">
+                                        <div>1小时6分钟</div>
+                                    </div>
+                                    <div class="w5 ">
+
+                                        <div seat="4-G2356-209">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="209" inventory="1" name="4-G2356" checked="" onclick="hubTrainList.getBookingCheck('2017-12-30','G2356','宁波','杭州东','209','4-1-G2356')">
+
+                                                </label>
+                                                二等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 71</b>
+                                            <strong class="">
+
+                                                余1张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="4-G2356-207">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="207" inventory="0" name="4-G2356" onclick="hubTrainList.getBookingCheck('2017-12-30','G2356','宁波','杭州东','207','4-1-G2356')">
+
+                                                </label>
+                                                一等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 120</b>
+                                            <strong class="">
+
+                                                余0张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="4-G2356-221">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="221" inventory="5" name="4-G2356" onclick="hubTrainList.getBookingCheck('2017-12-30','G2356','宁波','杭州东','221','4-1-G2356')">
+
+                                                </label>
+                                                商务座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 224.5</b>
+                                            <strong class="">
+
+                                                余5张
+
+                                            </strong>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="railway_list" style="border: 0; padding-top: 20px; padding-bottom: 20px;" btn="2">
+
+                                    <a class="BookButton" target="_blank" style="display: none" info="2017-12-30|G1898|杭州东|hangzhoudong|郑州东|zhengzhoudong|16:39"
+                                        href="###" onclick="return hubTrainList.btnBookingCheck(event);" btn="4-2-G1898">预定</a>
+
+                                    <div class="w1">
+                                        <div>
+                                            <strong>G1898</strong>
+                                        </div>
+                                    </div>
+                                    <div class="w2">
+                                        <div>
+                                            <strong>16:39</strong>
+                                        </div>
+                                        <div>
+                                            <label>21:03
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="w3">
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+                                            <span>杭州东</span>
+                                        </div>
+                                        <div>
+
+                                            <i class="guo_icon">过</i>
+
+                                            <span>郑州东</span>
+                                        </div>
+                                    </div>
+                                    <div class="w4">
+                                        <div>4小时24分钟</div>
+                                    </div>
+                                    <div class="w5 ">
+
+                                        <div seat="4-G1898-209">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" checked="" seatid="209" inventory="17" name="4-G1898" onclick="hubTrainList.getBookingCheck('2017-12-30','G1898','杭州东','郑州东','209','4-2-G1898')">
+
+                                                </label>
+                                                二等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 431</b>
+                                            <strong class="">
+
+                                                余17张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="4-G1898-207">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="207" inventory="11" name="4-G1898" onclick="hubTrainList.getBookingCheck('2017-12-30','G1898','杭州东','郑州东','207','4-2-G1898')">
+
+                                                </label>
+                                                一等座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 711.5</b>
+                                            <strong class="">
+
+                                                余11张
+
+                                            </strong>
+                                        </div>
+
+                                        <div seat="4-G1898-221">
+                                            <span>
+                                                <label>
+
+                                                    <input type="radio" seatid="221" inventory="8" name="4-G1898" onclick="hubTrainList.getBookingCheck('2017-12-30','G1898','杭州东','郑州东','221','4-2-G1898')">
+
+                                                </label>
+                                                商务座
+                                            </span>
+                                            <small>
+                                                <dfn>¥</dfn>
+                                            </small>
+                                            <b> 1360.5</b>
+                                            <strong class="">
+
+                                                余8张
+
+                                            </strong>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="site_info">
+        <p>
+            关于我们|网站声明
+        </p>
+        <p>
+            版权所有 @2017javee小组
+
+        </p>
+    </div>
+</body>
+
+</html>
